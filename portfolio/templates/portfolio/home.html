@@ -1,0 +1,42 @@
+{% extends 'portfolio/base.html'%}
+
+{%block content%}
+<div class="container text-center">
+
+    <h1> This is Meghraj's Portfolio</h1>
+
+    {% load static %}
+
+    <a href=""></a>
+
+
+    <br>
+    <img src="{% static 'portfolio/photo.jpg' %}" height="300" width="300">
+    <p> <h3>  Commander-in-Cheif at downtown Tokyo </h3> </p>
+
+  <div class="container">
+    <div class="row">
+      <div class="container-fluid p-2 bg-primary text-white text-center">
+        <h2>Portfolio</h2>
+
+      </div>
+
+    {% for project in projects %}
+
+    <div class="col-sm">
+    <h4> {{project.title}} </h4>
+    <img src="{{project.image.url}}" alt="" height="200" width="300">
+      <p> {{project.description}} </p>
+    {% if project.url %}
+    <a href="{{project.url}}"> More </a>
+    {% endif %}
+    </div>
+
+    {% endfor %}
+
+    </div>
+
+  </div>
+
+  {%endblock%}
+</div>
